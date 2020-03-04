@@ -4,7 +4,7 @@
 
 Apache Thrift软件框架（用于可扩展的跨语言服务开发）将软件栈与代码生成引擎结合在一起，以高效构建支持C ++，Java，Python，PHP，Ruby，Erlang，Perl，Haskell，C＃， Cocoa，JavaScript，Node.js，Smalltalk，OCaml和Delphi等语言的服务。
 
-**关键字：**远程服务器调用、支持多种编程语言、高效。
+**关键字：** 远程服务器调用、支持多种编程语言、高效。
 
 
 
