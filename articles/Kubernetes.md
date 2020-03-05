@@ -41,9 +41,9 @@ Kubernetes 由Master和Node两种节点组成，Master节点代表控制节点�
 
 在Node节点的最上层，是一个叫做kubelet的组件。
 
-在 Kubernetes 项目中，kubelet 主要负责同容器运行时（比如 Docker 项目）打交道。而这个交互所依赖的，是一个称作 **CRI（Container Runtime Interface）**的远程调用接口，这个接口定义了容器运行时的各项核心操作，如启动一个容器需要的所有参数。也就是说Kubernetes 项目并不关心你部署的是什么容器运行时、使用的什么技术实现，只要你的这个容器运行时能够运行标准的容器镜像，它就可以通过实现 CRI 接入到 Kubernetes 项目当中。
+在 Kubernetes 项目中，kubelet 主要负责同容器运行时（比如 Docker 项目）打交道。而这个交互所依赖的，是一个称作 **CRI（Container Runtime Interface）** 的远程调用接口，这个接口定义了容器运行时的各项核心操作，如启动一个容器需要的所有参数。也就是说Kubernetes 项目并不关心你部署的是什么容器运行时、使用的什么技术实现，只要你的这个容器运行时能够运行标准的容器镜像，它就可以通过实现 CRI 接入到 Kubernetes 项目当中。
 
-而具体的容器运行时，比如 Docker 项目，则一般**通过 OCI 这个容器运行时规范同底层的 Linux 操作系统进行交互**，即：把 CRI 请求翻译成对 Linux 操作系统的调用（操作 Linux Namespace 和 Cgroups 等）。
+而具体的容器运行时，比如 Docker 项目，则一般 **通过 OCI 这个容器运行时规范同底层的 Linux 操作系统进行交互** ，即：把 CRI 请求翻译成对 Linux 操作系统的调用（操作 Linux Namespace 和 Cgroups 等）。
 
 kubelet 还通过 gRPC 协议同一个叫作 Device Plugin 的插件进行交互。这个插件，是 Kubernetes 项目用来管理 GPU 等宿主机物理设备的主要组件，也是基于 Kubernetes 项目进行机器学习训练、高性能作业支持等工作必须关注的功能。
 
